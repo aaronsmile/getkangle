@@ -58,7 +58,7 @@ make -j 4
 make install
 #install memcached
 wget -c --no-check-certificate https://github.com/php-memcached-dev/php-memcached/archive/master.tar.gz -O php-memcached-master.tar.gz
-unzip php-memcached-master.tar.gz
+tar zxf php-memcached-master.tar.gz
 cd php-memcached-master
 /vhs/kangle/ext/tpl_php-7.2.0/bin/phpize
 ./configure --with-php-config=/vhs/kangle/ext/tpl_php-7.2.0/bin/php-config --disable-memcached-sasl
