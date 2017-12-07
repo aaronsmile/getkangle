@@ -155,11 +155,11 @@ function setup_mysql
 	if [ -d /var/lib/mysql/ ] ; then
 		return;
 	fi
-        yum -y install mysql-server
+        yum -y install Percona-Server-server-56
         if [ $? != 0 ] ; then
                 exit $?
         fi
-        /etc/init.d/mysqld start
+        service mysql start
 #	cat <<mayday
 #       =========================================
 #       please enter you  mysql root passwd:
@@ -174,7 +174,7 @@ function setup_mysql
 #        else
 #                echo "mysql-server is install success"
 #        fi
-	chkconfig mysqld on
+	chkconfig mysql on
 }
 #setup php
 function setup_php
