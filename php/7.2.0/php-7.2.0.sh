@@ -10,6 +10,8 @@ if test `arch` = "x86_64"; then
         ZEND_ARCH="x86_64"
 fi
 
+mkdir getkangle-src
+cd getkangle-src
 wget -c http://php.net/distributions/php-7.2.0.tar.bz2 -O php-7.2.0.tar.bz2
 tar xjf php-7.2.0.tar.bz2
 cd php-7.2.0
@@ -34,8 +36,8 @@ fi
 if [ ! -f $PREFIX/config.xml ]; then
         wget http://github.itzmx.com/bangteng/getkangle/master/php/7.2.0/config.xml -O $PREFIX/config.xml
 fi
-cd ..
 wget http://github.itzmx.com/bangteng/getkangle/master/php/7.2.0/php-templete.ini -O $PREFIX/php-templete.ini
+cd ..
 #install ioncube
 wget -c http://www.ioncube.com/php-7.2.0-beta-loaders/ioncube_loaders_lin_x86-64_BETA.tar.gz
 tar zxf ioncube_loaders_lin_x86-64_BETA.tar.gz
@@ -49,6 +51,7 @@ cd apcu-5.1.8
 ./configure --with-php-config=/vhs/kangle/ext/tpl_php-7.2.0/bin/php-config
 make -j 4
 make install
+cd ..
 #install libmemcached
 wget -c --no-check-certificate https://launchpad.net/libmemcached/1.0/1.0.18/+download/libmemcached-1.0.18.tar.gz
 tar zxf libmemcached-1.0.18.tar.gz
@@ -56,6 +59,7 @@ cd libmemcached-1.0.18
 ./configure
 make -j 4
 make install
+cd ..
 #install memcached
 wget -c --no-check-certificate https://github.com/php-memcached-dev/php-memcached/archive/master.tar.gz -O php-memcached-master.tar.gz
 tar zxf php-memcached-master.tar.gz
@@ -64,5 +68,5 @@ cd php-memcached-master
 ./configure --with-php-config=/vhs/kangle/ext/tpl_php-7.2.0/bin/php-config --disable-memcached-sasl
 make -j 4
 make install
-rm -rf /tmp/*
+cd ..
 /vhs/kangle/bin/kangle -r
