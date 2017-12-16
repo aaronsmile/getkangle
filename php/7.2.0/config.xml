@@ -5,9 +5,9 @@
 <env PHP_FCGI_MAX_REQUESTS='0' PHPRC='/tmp/php-${name}.ini'/>
 </cmd>
 <vhs  index='index.php'>
-<map file_ext='php' extend='cmd:php-7.2.0' allow_method='*'/>
+<map file_ext='php' extend='cmd:7.2.0' allow_method='*'/>
 </vhs>
-<vh_templete name='php:php-7.2.0' templete='html' index='index.php'>
-<map file_ext='php' extend='cmd:php-7.2.0' allow_method='*'/>
+<vh_templete name='php:7.2.0' templete='html' index='index.php'>
+<map file_ext='php' extend='cmd:7.2.0' allow_method='*'/>
 </vh_templete>
 </config>
