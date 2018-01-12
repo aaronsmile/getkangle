@@ -2,7 +2,7 @@
 yum -y install wget
 echo "timeout=120" >> /etc/yum.conf
 yum -y install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
-yum -y install which file wget make automake gcc gcc-c++ pcre-devel zlib-devel openssl-devel sqlite-devel quota unzip bzip2 libevent-devel
+yum -y install which file wget make automake gcc gcc-c++ pcre-devel zlib-devel openssl-devel sqlite-devel quota unzip bzip2 libevent-devel libaio-devel
 ulimit -n 1048576
 echo "* soft nofile 1048576" >> /etc/security/limits.conf
 echo "* hard nofile 1048576" >> /etc/security/limits.conf

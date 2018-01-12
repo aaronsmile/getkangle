@@ -1,5 +1,5 @@
 #/bin/sh
-KANGLE_VERSION="3.5.11"
+KANGLE_VERSION="3.5.12.11"
 PHP_VERSION="5.2.17"
 EASYPANEL_VERSION="2.6.22"
 PUREFTP_VERSION="1.0.47"
@@ -96,7 +96,7 @@ function setup_kangle
             		fi
     		fi
 	fi
-	KANGLE_URL="https://github.com/bangteng/kangle/archive/3.5.11.tar.gz"
+	KANGLE_URL="https://github.com/bangteng/kangle/archive/$KANGLE_VERSION.tar.gz"
 	if [  -f kangle-$KANGLE_VERSION.tar.gz ] ; then
 		rm -f kangle-$KANGLE_VERSION.tar.gz
 	fi	
@@ -127,10 +127,7 @@ function setup_kangle
 #prepare for system
 function setup_system
 {
-	yum -y install wget make gcc gcc-c++
-	yum -y install pcre-devel zlib-devel
-	yum -y install openssl-devel sqlite-devel
-	yum -y install quota unzip bzip2
+	yum -y install wget make gcc gcc-c++ pcre-devel zlib-devel openssl-devel sqlite-devel quota unzip bzip2 libaio-devel
 }
 function stat_iptables
 {
